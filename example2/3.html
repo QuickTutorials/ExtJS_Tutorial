@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.2.0-gpl/ext-all.js"></script>
+<script type="text/javascript">
+        Ext.onReady(function() {
+		//Ext.define("Bleext.training.User",{
+		Ext.define("User",{
+			username	: "",
+			password	: "",
+			constructor	: function(options){
+				Ext.apply(this,options || {});
+				console.log("A new user!");
+			}
+			login		: function(){
+				console.log("Loging in....");
+			},
+
+			logout		: function(){
+				console.log("Loging out....");
+			}
+		});
+        });
+</script>
+</head>
+<body>
+	Put this into a console:<br />
+
+		var john = Ext.create("User",{
+			username	: "john",
+			password	: "123"
+		});
+	<br />
+	<br />
+		console.log(john);
+</body>
+</html>
