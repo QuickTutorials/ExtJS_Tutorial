@@ -1,0 +1,12 @@
+cp ../example2/ext-4.2.1.883/ext-theme-classic/images/button/arrow.gif  ./ext-theme-classic/images/button/arrow.gif
+cp ../example2/ext-4.2.1.883/examples/desktop/images/taskbar/sencha.gif  ./images/taskbar/sencha.gif
+cp ../example2/ext-4.2.1.883/examples/desktop/images/accordian.gif  ./images/accordian.gif
+cp ../example2/ext-4.2.1.883/examples/desktop/images/grid.png  ./images/grid.png
+cp ../example2/ext-4.2.1.883/ext-theme-classic/images/toolbar/more.gif  ./ext-theme-classic/images/toolbar/more.gif
+cp ../example2/ext-4.2.1.883/ext-theme-classic/images/toolbar/scroll-left.gif  ./ext-theme-classic/images/toolbar/scroll-left.gif
+cp ../example2/ext-4.2.1.883/ext-theme-classic/images/toolbar/scroll-right.gif  ./ext-theme-classic/images/toolbar/scroll-right.gif
+cp ../example2/ext-4.2.1.883/wallpapers/Blue-Sencha.jpg  ./wallpapers/Blue-Sencha.jpg
+cp ../example2/ext-4.2.1.883/examples/desktop/images/grid48x48.png  ./images/grid48x48.png
+cp ../example2/ext-4.2.1.883/examples/desktop/images/im48x48.png  ./images/im48x48.png
+cp ../example2/ext-4.2.1.883/examples/desktop/images/notepadLarge.png  ./images/notepadLarge.png
+cp ../example2/ext-4.2.1.883/examples/desktop/images/statusLarge.png  ./images/statusLarge.png

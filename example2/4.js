@@ -1,6 +1,7 @@
 /*global Ext:false */
+var global_store,global_panel;
 Ext.onReady(function () {
-    var itemsPerPage = 2; // set the number of items you want per page
+    var itemsPerPage = 4; // set the number of items you want per page
     var store = Ext.create('Ext.data.Store', {
         id: 'simpsonsStore',
         autoLoad: false,
@@ -16,14 +17,21 @@ Ext.onReady(function () {
             }
         }
     });
+    global_store=store;
 
     // specify the page you want to load
     store.loadPage(1);
 
-    Ext.create('Ext.grid.Panel', {
+    global_panel=Ext.create('Ext.grid.Panel', {
         title: 'Simpsons',
         store: store,
-        columns: [{
+        columns: [
+	{
+	/*
+            header: 'Id',
+            dataIndex: 'id'
+        }, {
+	*/
             header: 'Label',
             dataIndex: 'label'
         }, {
@@ -33,7 +41,8 @@ Ext.onReady(function () {
         }, {
             header: 'Type',
             dataIndex: 'type'
-        }],
+        }
+	],
         width: 400,
         height: 125,
         dockedItems: [{

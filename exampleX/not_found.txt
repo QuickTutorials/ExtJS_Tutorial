@@ -1,0 +1,6 @@
+/ext-theme-classic/images/button/arrow.gif
+/ext-theme-classic/images/toolbar/more.gif
+/ext-theme-classic/images/toolbar/scroll-left.gif
+/ext-theme-classic/images/toolbar/scroll-right.gif
+/wallpapers/Blue-Sencha.jpg
+/images/taskbar/sencha.gif
