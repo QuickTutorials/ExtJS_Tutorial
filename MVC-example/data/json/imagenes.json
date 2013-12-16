@@ -24,6 +24,11 @@
             "name"     : "wallpaper.jpg",
             "size"     : 26.8,
             "createdAt": "15122013"
+        },
+        {
+            "name"     : "portatil.png",
+            "size"     : 140.6,
+            "createdAt": "16122013"
         }
     ],
     "success": true,
