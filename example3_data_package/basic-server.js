@@ -2,36 +2,43 @@
 
 var http = require('http'),fs=require('fs'), qs = require('querystring'), getjson=require('./getjson.js');
 
-var save=function(obj,path){
-    var o;
-    for(e in obj)o=JSON.parse(e);
-
-    var actualJson= {
+var saveJson=function(o,path){
+     var actualJson= {
     	host: 'localhost',
     	port: 9001,
     	path: path,
     	method: 'GET',
     	headers: { 'Content-Type': 'application/json' }
-    };
-
-    getjson.getJSON(actualJson,function(statusCode,result){
-	file=path.replace(/\?.*/,"").replace(/^\//,"");
-	
-	for(t in result.data){
-		if(o.id==result.data[t].id){
-			for(e in o)result.data[t][e]=o[e];
-			break;
-		}
+     };
+     var _obj;
+     if(!o.length)_obj=[o];
+     else _obj=o;
+     getjson.getJSON(actualJson,function(statusCode,actual){
+      for(e in _obj){
+      s=_obj[e];
+	file="."+path.replace(/\?.*/,"");
+	for(t in actual.data){
+	 if(s.id==actual.data[t].id){
+	  for(el in s)actual.data[t][el]=s[el];
+	 }
 	}
-    	fs.writeFile(file,JSON.stringify(result,null,4) , function(err) {
+      }
+      fs.writeFile(file,JSON.stringify(actual,null,4) , function(err) {
     		if(err) {
        	 		console.error("The file "+file+" couldn't be saved!");
        	 		console.log(err);
     		} else {
        	 		console.log("The file "+file+" was saved!");
     		}
-    	});		 
-    });
+      });		 
+    }); 
+}
+
+var save=function(obj,path){
+    for(o in obj){
+    	var o=JSON.parse(o);
+    	saveJson(o,"/blog-posts.json");
+    }
 }
 
 http.createServer(function (req, res) {
@@ -46,4 +53,5 @@ http.createServer(function (req, res) {
 				save(POST,service);
         	});
 	}
+	res.end("{}");
 }).listen(7000);
