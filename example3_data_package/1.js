@@ -39,7 +39,12 @@ Ext.define('My.model.BlogPost', {
 });
 
 var store = new Ext.data.Store({
-    model: 'My.model.BlogPost'
+	model: 'My.model.BlogPost',
+	sortOnLoad: true,
+	sorters: [{
+        property: 'id',
+        direction: 'DESC'
+    }]
 });
 
 store.load(function(records) {
